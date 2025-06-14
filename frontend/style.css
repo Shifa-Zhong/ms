@@ -58,11 +58,11 @@ main#app {
     flex-direction: column;
     gap: 1.5rem;
     position: sticky;
-    top: 100px; /* Match header height + padding */
+    top: 100px;
 }
 
 .pathway-panel {
-    flex: 2.5; /* Give more space to pathway */
+    flex: 2.5;
     min-width: 450px;
     display: flex;
     flex-direction: column;
@@ -279,6 +279,6 @@ button:disabled {
 #download-btn {
     padding: 8px 16px;
     font-size: 0.9rem;
-    width: auto; /* Override default width */
+    width: auto;
     margin: 0;
 } 
