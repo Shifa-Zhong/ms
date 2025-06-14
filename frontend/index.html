@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS Analysis Pathway Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MS Analysis Pathway Predictor</h1>
+    </header>
+    <main id="app">
+        <div class="container">
+            <div class="control-panel card">
+                <section>
+                    <h2>1. Upload Data</h2>
+                    <label for="file-input" class="file-label">
+                        <span>Choose a CSV or Excel file</span>
+                        <input type="file" id="file-input" accept=".csv,.xlsx">
+                    </label>
+                    <p id="file-name" class="file-name-display"></p>
+                </section>
+                
+                <section>
+                    <h2>2. Set Parent Molecule</h2>
+                    <input type="text" id="parent-name-input" placeholder="Parent Name (e.g., Ibuprofen)">
+                    <input type="text" id="parent-smiles-input" placeholder="Parent SMILES (e.g., CC(C)CC1=CC=C(C=C1)C(C)C(=O)O)">
+                    <button id="start-analysis-btn" disabled>Start Analysis</button>
+                </section>
+
+                <section id="candidates-section" class="card">
+                    <h2>3. Select Next Product</h2>
+                    <div id="candidates-grid" class="candidates-grid">
+                         <p class="placeholder">Upload a file and start analysis to see candidates.</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="pathway-panel card">
+                <section id="branching-section" class="hidden">
+                    <h2>Create a New Branch</h2>
+                    <label for="branch-point-select">Start a new path from:</label>
+                    <select id="branch-point-select"></select>
+                </section>
+
+                <section>
+                    <div class="section-header">
+                        <h2>Reaction Pathway</h2>
+                        <button id="download-btn" class="hidden">Download Pathway</button>
+                    </div>
+                    <div id="pathway-image-container" class="image-container pathway-display">
+                        <p class="placeholder">Your pathway will be visualized here.</p>
+                        <img id="pathway-image" src="" alt="Reaction Pathway" class="hidden">
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+        </div>
+        <div id="error" class="hidden"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html> 
